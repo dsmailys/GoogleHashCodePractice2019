@@ -45,7 +45,6 @@ namespace pizzaSolution
 
                 var fittingShape = FindFirstFittingShape(pointToUse, data, sliceUsageData, shapes);
                 if (fittingShape is null) {
-                    sliceUsageData[pointToUse.X][pointToUse.Y] = true;
                     emptyCycles++;
                     if (emptyCycles > 10000) {
                         break;
