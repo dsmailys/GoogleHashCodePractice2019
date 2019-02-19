@@ -47,12 +47,13 @@ namespace pizzaSolution
                 if (fittingShape is null) {
                     sliceUsageData[pointToUse.X][pointToUse.Y] = true;
                     emptyCycles++;
+                    if (emptyCycles > 10000) {
+                        break;
+                    }
                     continue; // no possible shapes here
                 }
 
-                if (emptyCycles > 10000) {
-                    break;
-                }
+                emptyCycles = 0;
 
                 foundSlices.Add(new PizzaSlice
                 {
